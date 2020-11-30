@@ -3,7 +3,14 @@
 ?>
 
 <main class="main_content">
-    <h3>TestWebseite</h3>
+    <?php
+        if (isset($_SESSION['nameBenutzer'])) {
+            echo '<p>Glückwunsch, du bist erfolgreich eingeloggt</p>';
+        }
+        else {
+            echo '<p>Du bist im Moment nicht eingeloggt</p>';
+        }
+    ?>
 </main>
 
 <?php

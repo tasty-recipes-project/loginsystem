@@ -25,8 +25,8 @@ li {
 }
 
 .login_area {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     margin-right: 160px;
     font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
     font-weight: 400;
@@ -38,4 +38,14 @@ li {
     font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
     font-weight: 400;
     font-size: 16px;    
+}
+
+.anmeldeFehler {
+    color: red;
+    font-size: 20px;
+}
+
+.erfolgreicheAnmeldung {
+    color: green;
+    font-size: 20px;
 }

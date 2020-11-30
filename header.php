@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!Doctype html>
 <html>
     <head>
@@ -17,7 +21,7 @@
         <header>
             <nav>
                 <ul class="menu">
-                    <li>Startseite</li>
+                    <li><a href="index.php">Startseite</a></li>
                     <li>Rezepte</li>
                     <li>Wissenwertes</li>
                     <li>Kontakt</li>
@@ -26,11 +30,23 @@
         </header>
         </div>
         <div class="col-lg-5">
-            <form action="test.php" method="post" class="login_area">
-                <input type="text" name="username" placeholder="Name/Emailadresse">
-                <input type="password" name="passwort" placeholder="Passwort">
-                <p>Noch kein Konto? Dann aber fix Registrieren</p>
-            </form>
+
+        <?php
+        if (isset($_SESSION['nameBenutzer'])) {
+            echo    '<form action="includes/logout.inc.php" method="post" class="login_area">
+                    <button type="submit" name="logout-submit">Logout</button>
+                    </form>';
+        }
+        else {
+            echo    '<form action="includes/login.inc.php" method="post" class="login_area">
+                    <input type="text" name="username" placeholder="Name/Emailadresse">
+                    <input type="password" name="passwort" placeholder="Passwort">
+                    <button type="submit" name="login-submit">Login</button>
+                    </form>
+                    <p>Noch kein Konto? Dann aber fix <a href="registrieren.php">Registrieren</a></p>';
+            }
+        ?>
+
         </div>
         </div>
         <div class="row">
