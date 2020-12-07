@@ -77,3 +77,4 @@ else {
     header("Location: ../registrieren.php");
     exit();
 }
+
